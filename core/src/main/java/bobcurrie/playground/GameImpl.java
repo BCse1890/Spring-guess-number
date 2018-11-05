@@ -3,10 +3,12 @@ package bobcurrie.playground;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+@Component
 public class GameImpl implements Game {
 
     // == constants ==
@@ -14,17 +16,9 @@ public class GameImpl implements Game {
 
 
     // == fields ==
-    @Autowired
-    private NumberGenerator numberGenerator;
+    private final NumberGenerator numberGenerator;
 
-    @Autowired
-    @GuessCount
-    private int guessCount;
-
-    @Autowired
-    @MinNumber
-    private int minNumber;
-
+    private final int guessCount;
 
     private int number;
     private int guess;
@@ -56,6 +50,11 @@ public class GameImpl implements Game {
         this.numberGenerator = numberGenerator;
     }*/
 
+    @Autowired
+    public GameImpl(NumberGenerator numberGenerator, @GuessCount int guessCount) {
+        this.numberGenerator = numberGenerator;
+        this.guessCount = guessCount;
+    }
 
     @Override
     public int getNumber() {

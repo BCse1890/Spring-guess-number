@@ -1,8 +1,6 @@
 package bobcurrie.playground.console;
 
-import bobcurrie.playground.config.AppConfig;
-import bobcurrie.playground.MessageGenerator;
-import bobcurrie.playground.NumberGenerator;
+import bobcurrie.playground.config.GameConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -18,9 +16,9 @@ public class Main {
 
         // create context (container)
         ConfigurableApplicationContext context
-                = new AnnotationConfigApplicationContext(AppConfig.class);
+                = new AnnotationConfigApplicationContext(GameConfig.class);
 
-        // get number generator bean from context (container)
+        /*// get number generator bean from context (container)
         NumberGenerator numberGenerator
                 = context.getBean(NumberGenerator.class);
 
@@ -33,7 +31,7 @@ public class Main {
         // get message generator bean from context (container)
         MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
         log.info("getMainMessage= {}", messageGenerator.getMainMessage());
-        log.info("getResultMessage= {}", messageGenerator.getResultMessage());
+        log.info("getResultMessage= {}", messageGenerator.getResultMessage());*/
 
         // close context (container)
         context.close();

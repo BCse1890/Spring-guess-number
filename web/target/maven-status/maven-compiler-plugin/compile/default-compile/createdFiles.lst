@@ -1,3 +1,5 @@
 bobcurrie\playground\config\WebConfig.class
+bobcurrie\playground\service\GameServiceImpl.class
+bobcurrie\playground\service\GameService.class
 bobcurrie\playground\util\ViewNames.class
 bobcurrie\playground\WebMain.class
